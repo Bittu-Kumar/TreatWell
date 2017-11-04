@@ -18,7 +18,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <EditText
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/register_usernameET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
             app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
             app:layout_constraintTop_toBottomOf="@id/register_usernameTIL">
 
-            <EditText
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/register_passwordET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
             app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
             app:layout_constraintTop_toBottomOf="@id/register_passwordTIL">
 
-            <EditText
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/register_firstnameET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
             app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
             app:layout_constraintTop_toBottomOf="@id/register_firstnameTIL">
 
-            <EditText
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/rgister_middlenameET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
             app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
             app:layout_constraintTop_toBottomOf="@id/register_middlenameTIL">
 
-            <EditText
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/register_lastnameET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
             app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
             app:layout_constraintTop_toBottomOf="@id/register_lastnameTIL">
 
-            <EditText
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/register_emailET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -122,7 +122,7 @@
             app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
             app:layout_constraintTop_toBottomOf="@id/register_emailTIL">
 
-            <EditText
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/register_dobET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
             app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
             app:layout_constraintTop_toBottomOf="@id/register_dobTIL">
 
-            <EditText
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/register_bloodgroupET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -156,7 +156,7 @@
             app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
             app:layout_constraintTop_toBottomOf="@id/register_bloodgroupTIL">
 
-            <EditText
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/register_phoneET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

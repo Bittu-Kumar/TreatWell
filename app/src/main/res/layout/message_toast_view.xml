@@ -12,7 +12,7 @@
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
     app:cardBackgroundColor="#c03d3c3e"
-    android:layout_margin="20dp">
+    >
 
     <LinearLayout
         android:layout_width="match_parent"

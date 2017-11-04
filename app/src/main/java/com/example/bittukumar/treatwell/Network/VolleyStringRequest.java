@@ -82,6 +82,11 @@ public class VolleyStringRequest {
             }
 
             @Override
+            public String getBodyContentType() {
+                return "application/x-www-form-urlencoded; charset=UTF-8";
+            }
+
+            @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 return getParamslocal();
             }
@@ -89,8 +94,8 @@ public class VolleyStringRequest {
             public Map<String, String> getHeaders() throws AuthFailureError {
                 super.getHeaders();
                 Map<String,String> headers =  new HashMap<String, String>();
-//                headers.put("Content-Type","application/x-www-form-urlencoded");
-                headers.put("Content-Type", "text/html;charset=utf-8");
+                headers.put("Content-Type","application/x-www-form-urlencoded;charset=utf-8");
+//                headers.put("Content-Type", "text/html;charset=utf-8");
                 return headers;
             }
 

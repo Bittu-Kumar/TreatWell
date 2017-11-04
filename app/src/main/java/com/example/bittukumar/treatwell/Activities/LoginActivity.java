@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -67,7 +69,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
 //        VolleyStringRequest.request(LoginActivity.this, AppConstants.loginUrl,params, loginResp);
-        startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+        startActivity(new Intent(LoginActivity.this,HomeActivity.class));
 
 
     }
@@ -76,7 +78,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         @Override
         public void responseReceived(String response) {
             Utils.showSuccessToast(LoginActivity.this,"you are successfully logged in hj j h j j hj ");
-            startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+            startActivity(new Intent(LoginActivity.this,HomeActivity.class));
 
         }
 

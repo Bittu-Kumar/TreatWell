@@ -14,10 +14,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.bittukumar.treatwell.Utils.AppConstants;
-import com.example.epuser.pickcontacts.R;
-import com.example.epuser.pickcontacts.common.AppConstants;
-import com.example.epuser.pickcontacts.exceptions.InternetNotAvailableException;
-import com.example.epuser.pickcontacts.widget.EPProgressDialog;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,14 +23,12 @@ import java.util.Map;
 
 import static com.android.volley.VolleyLog.TAG;
 
-/**
- * Created by ADMIN on 7/18/2016.
- */
+
 public class VolleyJsonRequest {
 
     private static ProgressDialog progressDialog;
 
-    public static JsonObjectRequest request(final Context context, String url, JSONObject requestObject, final OnJsonResponse onResponse, final boolean isProgressShow) throws InternetNotAvailableException {
+    public static JsonObjectRequest request(final Context context, String url, JSONObject requestObject, final OnJsonResponse onResponse, final boolean isProgressShow){
         JsonObjectRequest jsObjRequest = null;
         Log.v("VollyURL    --->>", url);
         if (CheckNetwork.isInternetAvailable(context)) {
@@ -103,11 +97,12 @@ public class VolleyJsonRequest {
     }
 
     private static void showProgressDialog(Context context) {
-        progressDialog = new EPProgressDialog(context);
-        progressDialog.setIndeterminate(true);
+        progressDialog = new ProgressDialog(context);
+//        progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
-        progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        //progressDialog.setIndeterminateDrawable(ContextCompat.getDrawable(context,R.drawable.ep_progress));
+        progressDialog.setMessage("loading...");
+//        progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
         if (!progressDialog.isShowing() && !((Activity) context).isFinishing()) {
             progressDialog.show();
         }
