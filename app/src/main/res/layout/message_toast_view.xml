@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardPreventCornerOverlap="false"
+    android:gravity="center_horizontal"
+    app:cardCornerRadius="20dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    app:cardBackgroundColor="#c03d3c3e"
+    android:layout_margin="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/img_hosp_icon"
+            android:src="@drawable/ic_hospital"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/img_tick"
+            app:srcCompat="@drawable/ic_tick" />
+
+        <TextView
+            android:id="@+id/messageTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="15dp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
