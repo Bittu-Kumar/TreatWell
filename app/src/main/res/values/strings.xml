@@ -5,4 +5,13 @@
     <string name="login">login</string>
     <string name="empty_username_error_message">Please enter the username</string>
     <string name="empty_password_error_message">Please enter the password</string>
+    <string name="first_name">First Name</string>
+    <string name="middle_name">Middle Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="date_of_birth">Date Of Birth</string>
+    <string name="blood_group">Blood Group</string>
+    <string name="phone">Phone</string>
+    <string name="gender">Gender</string>
+    <string name="register">Register</string>
 </resources>
