@@ -1,5 +1,6 @@
 package com.example.bittukumar.treatwell.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -53,6 +54,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
         Utils.showSuccessToast(LoginActivity.this,"you are successfully logged in hj j h j j hj ");
+        startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
 
 
     }
