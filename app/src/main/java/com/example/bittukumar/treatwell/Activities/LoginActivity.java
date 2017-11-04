@@ -7,9 +7,17 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.bittukumar.treatwell.Network.VolleyStringRequest;
 import com.example.bittukumar.treatwell.R;
+import com.example.bittukumar.treatwell.Utils.AppConstants;
 import com.example.bittukumar.treatwell.Utils.Utils;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText usernameET;
@@ -53,9 +61,28 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             passwordET.setError(getString(R.string.empty_password_error_message));
             return;
         }
-        Utils.showSuccessToast(LoginActivity.this,"you are successfully logged in hj j h j j hj ");
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("username",username);
+        params.put("password",password);
+
+
+//        VolleyStringRequest.request(LoginActivity.this, AppConstants.loginUrl,params, loginResp);
         startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
 
 
     }
+    private VolleyStringRequest.OnStringResponse loginResp = new VolleyStringRequest.OnStringResponse() {
+
+        @Override
+        public void responseReceived(String response) {
+            Utils.showSuccessToast(LoginActivity.this,"you are successfully logged in hj j h j j hj ");
+            startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+
+        }
+
+        @Override
+        public void errorReceived(int code, String message) {
+
+        }
+    };
 }

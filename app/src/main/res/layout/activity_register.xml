@@ -1,192 +1,223 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.bittukumar.treatwell.Activities.RegisterActivity">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/register_usernameTIL"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/register_usernameET"
+        android:layout_height="wrap_content">
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_usernameTIL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/username" />
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/register_usernameET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/username" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/register_passwordTIL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
-        app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
-        app:layout_constraintTop_toBottomOf="@id/register_usernameTIL">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/register_passwordET"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_passwordTIL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/password"
-            android:inputType="textPassword" />
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
+            app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
+            app:layout_constraintTop_toBottomOf="@id/register_usernameTIL">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/register_passwordET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                android:inputType="textPassword" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/register_firstnameTIL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
-        app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
-        app:layout_constraintTop_toBottomOf="@id/register_passwordTIL">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/register_firstnameET"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_firstnameTIL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/first_name" />
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
+            app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
+            app:layout_constraintTop_toBottomOf="@id/register_passwordTIL">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/register_firstnameET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/first_name" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/register_middlenameTIL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
-        app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
-        app:layout_constraintTop_toBottomOf="@id/register_firstnameTIL">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/rgister_middlenameET"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_middlenameTIL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/middle_name" />
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
+            app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
+            app:layout_constraintTop_toBottomOf="@id/register_firstnameTIL">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/rgister_middlenameET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/middle_name" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/register_lastnameTIL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
-        app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
-        app:layout_constraintTop_toBottomOf="@id/register_middlenameTIL">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/register_lastnameET"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_lastnameTIL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/last_name" />
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
+            app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
+            app:layout_constraintTop_toBottomOf="@id/register_middlenameTIL">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/register_lastnameET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/last_name" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/register_emailTIL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
-        app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
-        app:layout_constraintTop_toBottomOf="@id/register_lastnameTIL">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/register_emailET"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_emailTIL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress" />
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
+            app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
+            app:layout_constraintTop_toBottomOf="@id/register_lastnameTIL">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/register_emailET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/register_dobTIL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
-        app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
-        app:layout_constraintTop_toBottomOf="@id/register_emailTIL">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/register_dobET"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_dobTIL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/date_of_birth" />
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
+            app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
+            app:layout_constraintTop_toBottomOf="@id/register_emailTIL">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/register_dobET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/date_of_birth" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/register_bloodgroupTIL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
-        app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
-        app:layout_constraintTop_toBottomOf="@id/register_dobTIL">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/register_bloodgroupET"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_bloodgroupTIL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/blood_group" />
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
+            app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
+            app:layout_constraintTop_toBottomOf="@id/register_dobTIL">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/register_bloodgroupET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/blood_group" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/register_phoneTIL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
-        app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
-        app:layout_constraintTop_toBottomOf="@id/register_bloodgroupTIL">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/register_phoneET"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_phoneTIL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/phone"
-            android:inputType="phone" />
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
+            app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
+            app:layout_constraintTop_toBottomOf="@id/register_bloodgroupTIL">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/register_phoneET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone"
+                android:inputType="phone" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/register_genderTIL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
-        app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
-        app:layout_constraintTop_toBottomOf="@id/register_phoneTIL">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/register_genderET"
-            android:layout_width="match_parent"
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/gender" />
+            android:id="@+id/register_genderTV"
+            app:layout_constraintTop_toBottomOf="@id/register_phoneTIL"
+            app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
+            android:text="@string/gender"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"/>
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/register_genderRG"
+            app:layout_constraintTop_toTopOf="@id/register_genderTV"
+            app:layout_constraintBottom_toBottomOf="@id/register_genderTV"
+            app:layout_constraintLeft_toRightOf="@id/register_genderTV"
+            android:orientation="horizontal">
 
-    </android.support.design.widget.TextInputLayout>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/maleRB"
+                android:text="@string/male"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/femaleRB"
+                android:text="@string/female"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/othersRB"
+                android:text="@string/others"
+                android:layout_marginRight="10dp"
 
-    <Button
-        android:id="@+id/register_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/register"
-        app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
-        app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
-        app:layout_constraintTop_toBottomOf="@id/register_genderTIL" />
+                android:layout_marginEnd="10dp" />
 
-</android.support.constraint.ConstraintLayout>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/register"
+            app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
+            app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
+            app:layout_constraintTop_toBottomOf="@id/register_genderRG" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

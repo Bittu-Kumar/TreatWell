@@ -58,6 +58,9 @@ public class VolleyStringRequest {
                             }
 
                         }
+                        else {
+                            Log.v("response is: -->",response);
+                        }
 
 
                     }
@@ -86,8 +89,8 @@ public class VolleyStringRequest {
             public Map<String, String> getHeaders() throws AuthFailureError {
                 super.getHeaders();
                 Map<String,String> headers =  new HashMap<String, String>();
-                headers.put("Content-Type","application/x-www-form-urlencoded");
-//                headers.put("Content-Type", "application/json;charset=utf-8");
+//                headers.put("Content-Type","application/x-www-form-urlencoded");
+                headers.put("Content-Type", "text/html;charset=utf-8");
                 return headers;
             }
 

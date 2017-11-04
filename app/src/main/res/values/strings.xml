@@ -14,4 +14,7 @@
     <string name="phone">Phone</string>
     <string name="gender">Gender</string>
     <string name="register">Register</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="others">Others</string>
 </resources>
