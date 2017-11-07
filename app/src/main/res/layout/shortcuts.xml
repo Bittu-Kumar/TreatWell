@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardElevation="5dp"
+        app:cardBackgroundColor="#cbdbeb">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/img_home"
+                android:layout_width="@dimen/shortcut_img_size"
+                android:layout_height="@dimen/shortcut_img_size"
+                app:srcCompat="@drawable/ic_home"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/homeTV"
+                android:padding="5dp"
+
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_search"
+                android:layout_width="@dimen/shortcut_img_size"
+                android:layout_height="@dimen/shortcut_img_size"
+                android:padding="5dp"
+
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                app:layout_constraintLeft_toRightOf="@+id/img_home"
+                app:layout_constraintRight_toLeftOf="@+id/img_history"
+                app:srcCompat="@drawable/ic_search_doctor"
+                app:layout_constraintBottom_toBottomOf="@+id/img_home"
+                app:layout_constraintTop_toTopOf="@+id/img_home"
+                android:layout_marginTop="0dp" />
+
+            <ImageView
+                android:id="@+id/img_history"
+                android:layout_width="@dimen/shortcut_img_size"
+                android:layout_height="@dimen/shortcut_img_size"
+                app:srcCompat="@drawable/ic_history"
+                android:layout_marginLeft="0dp"
+                android:layout_marginBottom="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="0dp"
+                app:layout_constraintRight_toRightOf="parent"
+
+                app:layout_constraintBottom_toBottomOf="@+id/img_home"
+                android:padding="5dp"
+
+                app:layout_constraintTop_toTopOf="@+id/img_home"
+                android:layout_marginTop="0dp" />
+
+            <ImageView
+                android:id="@+id/img_profile"
+                android:layout_width="@dimen/shortcut_img_size"
+                android:layout_height="@dimen/shortcut_img_size"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                app:layout_constraintLeft_toRightOf="@+id/img_history"
+                app:srcCompat="@drawable/ic_profile"
+                app:layout_constraintRight_toLeftOf="@+id/img_logout"
+                android:layout_marginRight="0dp"
+
+                app:layout_constraintBottom_toBottomOf="@+id/img_home"
+                android:padding="5dp"
+
+                app:layout_constraintTop_toTopOf="@+id/img_home"
+                android:layout_marginTop="0dp" />
+
+            <ImageView
+                android:id="@+id/img_logout"
+                android:layout_width="@dimen/shortcut_img_size"
+                android:layout_height="@dimen/shortcut_img_size"
+                android:layout_marginBottom="0dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:srcCompat="@drawable/ic_logout"
+                app:layout_constraintBottom_toBottomOf="@+id/img_home"
+                android:padding="5dp"
+
+                app:layout_constraintTop_toTopOf="@+id/img_home"
+                android:layout_marginTop="0dp" />
+
+            <TextView
+                android:id="@+id/homeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@android:color/black"
+                android:text="Home"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/img_home"
+                app:layout_constraintRight_toRightOf="@+id/img_home"
+                />
+
+            <TextView
+                android:id="@+id/searchTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/homeTV"
+                app:layout_constraintLeft_toLeftOf="@+id/img_search"
+                app:layout_constraintRight_toRightOf="@+id/img_search" />
+
+            <TextView
+                android:id="@+id/historyTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="History"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/homeTV"
+                app:layout_constraintLeft_toLeftOf="@+id/img_history"
+                app:layout_constraintRight_toRightOf="@+id/img_history" />
+
+            <TextView
+                android:id="@+id/profileTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Profile"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/homeTV"
+                app:layout_constraintLeft_toLeftOf="@+id/img_profile"
+                app:layout_constraintRight_toRightOf="@+id/img_profile" />
+
+            <TextView
+                android:id="@+id/logoutTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/logout"
+                android:textColor="@android:color/black"
+
+                app:layout_constraintBottom_toBottomOf="@+id/homeTV"
+                app:layout_constraintLeft_toLeftOf="@+id/img_logout"
+                app:layout_constraintRight_toRightOf="@+id/img_logout"
+
+                />
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

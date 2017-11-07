@@ -126,7 +126,9 @@
                 android:id="@+id/register_dobET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/date_of_birth" />
+                android:hint="@string/date_of_birth"
+                android:focusable="false"
+                android:clickable="true" />
 
         </android.support.design.widget.TextInputLayout>
 

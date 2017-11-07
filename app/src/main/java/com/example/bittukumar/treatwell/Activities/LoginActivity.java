@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.bittukumar.treatwell.Network.VolleyStringRequest;
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText usernameET;
     private EditText passwordET;
     private Button loginBTN;
+    private TextView signupTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         passwordET = (EditText)findViewById(R.id.login_passwordET);
         loginBTN = (Button)findViewById(R.id.loginBTN);
         loginBTN.setOnClickListener(this);
+        signupTV = (TextView)findViewById(R.id.signupTV);
+        signupTV.setOnClickListener(this);
+
     }
 
     @Override
@@ -46,6 +51,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if(v.getId() ==R.id.loginBTN)
         {
             login();
+        }
+        else if(v == signupTV)
+        {
+            startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
         }
 
     }
@@ -68,8 +77,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         params.put("password",password);
 
 
-//        VolleyStringRequest.request(LoginActivity.this, AppConstants.loginUrl,params, loginResp);
-        startActivity(new Intent(LoginActivity.this,HomeActivity.class));
+        VolleyStringRequest.request(LoginActivity.this, AppConstants.loginUrl,params, loginResp);
+//        startActivity(new Intent(LoginActivity.this,HomeActivity.class));
 
 
     }
@@ -77,7 +86,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         @Override
         public void responseReceived(String response) {
-            Utils.showSuccessToast(LoginActivity.this,"you are successfully logged in hj j h j j hj ");
+            Utils.showSuccessToast(LoginActivity.this,"you are successfully logged in!!");
             startActivity(new Intent(LoginActivity.this,HomeActivity.class));
 
         }

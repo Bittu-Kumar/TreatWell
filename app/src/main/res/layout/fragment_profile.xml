@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/profileIV"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:src="@drawable/ic_profile"
+        android:layout_margin="10dp" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/edit_profileIV"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/ic_edit_profile"
+        android:layout_margin="10dp"/>
+
+    <EditText
+        android:id="@+id/nameET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:clickable="false"
+        android:hint="Name"
+        android:text="Bittu Kumar"
+        app:layout_constraintBottom_toBottomOf="@id/profileIV"
+        app:layout_constraintLeft_toRightOf="@id/profileIV"
+        app:layout_constraintTop_toTopOf="@id/profileIV" />
+
+    <TextView
+        android:id="@+id/balanceTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Balance: "
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/profileIV"
+        app:layout_constraintTop_toBottomOf="@id/profileIV" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/balanceTV"
+        app:layout_constraintStart_toEndOf="@+id/balanceTV"
+        app:layout_constraintTop_toTopOf="@+id/balanceTV"
+        app:srcCompat="@drawable/ic_rupee" />
+
+    <TextView
+        android:id="@+id/realbalanceTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="10000000.00"
+        app:layout_constraintBottom_toBottomOf="@+id/balanceTV"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/balanceTV"
+        android:layout_marginLeft="10dp"
+        android:textColor="#4ce242"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/profile_emailTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Email:"
+        app:layout_constraintStart_toStartOf="@+id/balanceTV"
+        app:layout_constraintTop_toBottomOf="@+id/balanceTV"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/emailET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="bittu@cse.iitb.ac.in"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_emailTV"
+        app:layout_constraintStart_toEndOf="@+id/profile_emailTV"
+        app:layout_constraintTop_toTopOf="@+id/profile_emailTV"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:id="@+id/phoneTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Phone:"
+        app:layout_constraintStart_toStartOf="@+id/profile_emailTV"
+        app:layout_constraintTop_toBottomOf="@+id/profile_emailTV"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/phoneET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:text="9987582933"
+        app:layout_constraintBottom_toBottomOf="@+id/phoneTV"
+        app:layout_constraintStart_toEndOf="@+id/phoneTV"
+        app:layout_constraintTop_toTopOf="@+id/phoneTV"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:id="@+id/dobTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Date Of Birth:"
+        app:layout_constraintStart_toStartOf="@+id/phoneTV"
+        app:layout_constraintTop_toBottomOf="@+id/phoneTV"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/real_dobTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="15/08/1997"
+        app:layout_constraintBottom_toBottomOf="@+id/dobTV"
+        app:layout_constraintStart_toEndOf="@+id/dobTV"
+        app:layout_constraintTop_toTopOf="@+id/dobTV"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/b_grpTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Blood Group:"
+        app:layout_constraintStart_toStartOf="@+id/dobTV"
+        app:layout_constraintTop_toBottomOf="@+id/dobTV"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/b_grpET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="AB+"
+        app:layout_constraintBottom_toBottomOf="@+id/b_grpTV"
+        app:layout_constraintStart_toEndOf="@+id/b_grpTV"
+        app:layout_constraintTop_toTopOf="@+id/b_grpTV"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:id="@+id/profile_genderTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Gender:"
+        app:layout_constraintStart_toStartOf="@+id/b_grpTV"
+        app:layout_constraintTop_toBottomOf="@+id/b_grpTV"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_genderRG"
+        app:layout_constraintTop_toTopOf="@id/profile_genderTV"
+        app:layout_constraintBottom_toBottomOf="@id/profile_genderTV"
+        app:layout_constraintLeft_toRightOf="@id/profile_genderTV"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profilemaleRB"
+            android:text="@string/male"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profilefemaleRB"
+            android:text="@string/female"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profileothersRB"
+            android:text="@string/others"
+            android:layout_marginRight="10dp"
+
+            android:layout_marginEnd="10dp" />
+
+    </RadioGroup>
+
+
+
+
+</android.support.constraint.ConstraintLayout>

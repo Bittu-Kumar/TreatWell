@@ -2,7 +2,7 @@
     <string name="app_name">TreatWell</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="login">login</string>
+    <string name="login">log in</string>
     <string name="empty_username_error_message">Please enter the username</string>
     <string name="empty_password_error_message">Please enter the password</string>
     <string name="first_name">First Name</string>
@@ -24,6 +24,13 @@
 
     <string name="action_settings">Settings</string>
     <string name="search">Search</string>
-    <string name="logout">Logout</string>
+    <string name="logout">Log out</string>
     <string name="home">Home</string>
+    <string name="empty_first_name_error_message">Please enter your first name</string>
+    <string name="empty_lname_error">Please enter your last name</string>
+    <string name="empty_email_error">Please enter your email address</string>
+    <string name="empty_dob_error">please enter your date of birth</string>
+    <string name="empty_bg_error">Please enter your blood group</string>
+    <string name="empty_phone_error">Please enter your Phone Number</string>
+    <string name="sign_up">SIGN UP</string>
 </resources>
