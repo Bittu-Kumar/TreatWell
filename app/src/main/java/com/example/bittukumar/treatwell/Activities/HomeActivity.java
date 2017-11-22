@@ -13,8 +13,12 @@ import android.widget.ImageView;
 
 import com.example.bittukumar.treatwell.Fragments.ProfileFragment;
 import com.example.bittukumar.treatwell.Fragments.SearchFragment;
+import com.example.bittukumar.treatwell.Network.VolleyStringRequest;
 import com.example.bittukumar.treatwell.R;
+import com.example.bittukumar.treatwell.Utils.AppConstants;
 import com.example.bittukumar.treatwell.Utils.Utils;
+
+import java.util.HashMap;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     private FragmentManager manager;
@@ -57,12 +61,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if (v == logoutIV)
         {
-
-            startActivity(new Intent(HomeActivity.this,LoginActivity.class));
-            finish();
+            logout();
+        }
+        else if(v == searchIV)
+        {
+            changeFragment(new SearchFragment());
         }
 
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -85,12 +93,30 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
         if(id == R.id.action_logout)
         {
-            startActivity(new Intent(HomeActivity.this,LoginActivity.class));
-            return true;
+            logout();
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void logout() {
+        HashMap<String,String> params = new HashMap<>();
+        VolleyStringRequest.request(HomeActivity.this, AppConstants.logoutURL,params,logoutResp);
+    }
+
+    VolleyStringRequest.OnStringResponse logoutResp = new VolleyStringRequest.OnStringResponse() {
+        @Override
+        public void responseReceived(String response) {
+            Utils.showSuccessToast(HomeActivity.this,"You are successfully logged out");
+            startActivity(new Intent(HomeActivity.this,LoginActivity.class));
+            finish();
+        }
+
+        @Override
+        public void errorReceived(int code, String message) {
+
+        }
+    };
 
 
     public void changeFragment(Fragment fragment) {

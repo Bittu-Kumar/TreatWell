@@ -28,12 +28,16 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:clickable="false"
+
         android:hint="Name"
         android:text="Bittu Kumar"
+        android:ems="10"
         app:layout_constraintBottom_toBottomOf="@id/profileIV"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toRightOf="@id/profileIV"
-        app:layout_constraintTop_toTopOf="@id/profileIV" />
+        app:layout_constraintRight_toLeftOf="@id/edit_profileIV"
+        app:layout_constraintTop_toTopOf="@id/profileIV"
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/balanceTV"
@@ -82,16 +86,20 @@
 
     <EditText
         android:id="@+id/emailET"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:ems="10"
         android:inputType="textEmailAddress"
         android:text="bittu@cse.iitb.ac.in"
         app:layout_constraintBottom_toBottomOf="@+id/profile_emailTV"
         app:layout_constraintStart_toEndOf="@+id/profile_emailTV"
         app:layout_constraintTop_toTopOf="@+id/profile_emailTV"
-        android:layout_marginLeft="10dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:focusable="false"
+        android:layout_marginEnd="20dp" />
 
     <TextView
         android:id="@+id/phoneTV"
@@ -115,7 +123,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/phoneTV"
         app:layout_constraintStart_toEndOf="@+id/phoneTV"
         app:layout_constraintTop_toTopOf="@+id/phoneTV"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="10dp"
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/dobTV"
@@ -157,13 +166,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:ems="10"
+        android:ems="3"
         android:inputType="textPersonName"
         android:text="AB+"
         app:layout_constraintBottom_toBottomOf="@+id/b_grpTV"
         app:layout_constraintStart_toEndOf="@+id/b_grpTV"
         app:layout_constraintTop_toTopOf="@+id/b_grpTV"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="10dp"
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/profile_genderTV"
@@ -183,7 +193,8 @@
         app:layout_constraintTop_toTopOf="@id/profile_genderTV"
         app:layout_constraintBottom_toBottomOf="@id/profile_genderTV"
         app:layout_constraintLeft_toRightOf="@id/profile_genderTV"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -191,12 +202,14 @@
             android:id="@+id/profilemaleRB"
             android:text="@string/male"
             android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp" />
+            android:layout_marginStart="10dp"
+            android:enabled="false"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/profilefemaleRB"
             android:text="@string/female"
+            android:enabled="false"
             />
         <RadioButton
             android:layout_width="wrap_content"
@@ -205,9 +218,36 @@
             android:text="@string/others"
             android:layout_marginRight="10dp"
 
-            android:layout_marginEnd="10dp" />
+            android:layout_marginEnd="10dp"
+            android:enabled="false"/>
 
     </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cancelbtnEditProfile"
+        app:layout_constraintTop_toBottomOf="@id/profile_genderRG"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="10dp"
+        android:text="cancel"
+       android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:visibility="gone"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/savebtnEditProfile"
+        app:layout_constraintTop_toBottomOf="@id/profile_genderRG"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:text="save changes"
+        android:layout_marginEnd="30dp"
+        android:visibility="gone"/>
 
 
 

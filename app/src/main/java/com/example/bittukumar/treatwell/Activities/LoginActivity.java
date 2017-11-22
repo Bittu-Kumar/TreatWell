@@ -20,6 +20,8 @@ import com.example.bittukumar.treatwell.Utils.Utils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.CookieHandler;
+import java.net.CookieManager;
 import java.util.HashMap;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -27,11 +29,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText passwordET;
     private Button loginBTN;
     private TextView signupTV;
+    CookieManager cookieManager = new CookieManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        CookieHandler.setDefault(cookieManager);
 
         init();
     }
@@ -55,6 +59,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         else if(v == signupTV)
         {
             startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+            finish();
         }
 
     }
@@ -88,6 +93,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         public void responseReceived(String response) {
             Utils.showSuccessToast(LoginActivity.this,"you are successfully logged in!!");
             startActivity(new Intent(LoginActivity.this,HomeActivity.class));
+            finish();
 
         }
 

@@ -33,4 +33,18 @@
     <string name="empty_bg_error">Please enter your blood group</string>
     <string name="empty_phone_error">Please enter your Phone Number</string>
     <string name="sign_up">SIGN UP</string>
+    <string name="empty_name_error">Please enter your name</string>
+
+    <string-array name="SortByOptions">
+        <item>Please Select ...</item>
+        <item>Hospital_Ranking</item>
+        <item>Doctor_Ranking</item>
+        <item>Fees</item>
+        <item>Distance</item>
+    </string-array>
+    <string-array name="SpecificationOptions">
+        <item>Dermatology</item>
+        <item>Pediatrics</item>
+        <item>ENT</item>
+    </string-array>
 </resources>
