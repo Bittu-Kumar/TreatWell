@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardElevation="5dp"
+    app:cardBackgroundColor="#ecf3fa"
+    app:contentPadding="10dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/starttimeTV"
+            android:text="12:30"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timeseparatorTV"
+            android:text=" - "
+            app:layout_constraintTop_toTopOf="@id/starttimeTV"
+            app:layout_constraintBottom_toBottomOf="@id/starttimeTV"
+            app:layout_constraintLeft_toRightOf="@id/starttimeTV"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/endTimeTV"
+            app:layout_constraintLeft_toRightOf="@id/timeseparatorTV"
+            app:layout_constraintTop_toTopOf="@id/starttimeTV"
+            app:layout_constraintBottom_toBottomOf="@id/starttimeTV"
+            android:text="13:00"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/feeTV"
+            app:layout_constraintTop_toTopOf="@id/starttimeTV"
+            app:layout_constraintBottom_toBottomOf="@id/starttimeTV"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="20sp"
+            android:text="100.00"
+            android:textColor="#4ce242"/>
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/rupeeIV"
+            android:src="@drawable/ic_rupee"
+            app:layout_constraintTop_toTopOf="@id/starttimeTV"
+            app:layout_constraintRight_toLeftOf="@id/feeTV"
+            android:layout_marginTop="2dp"
+            android:padding="5dp"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

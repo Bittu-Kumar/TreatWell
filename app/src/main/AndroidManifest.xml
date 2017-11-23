@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.RegisterActivity" />
-        <activity android:name=".Activities.HomeActivity"></activity>
+        <activity android:name=".Activities.HomeActivity" />
+        <activity android:name=".Activities.BookingSlotsActivity"></activity>
     </application>
 
 </manifest>

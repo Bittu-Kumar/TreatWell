@@ -67,6 +67,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         {
             changeFragment(new SearchFragment());
         }
+        else if (v == homeIV)
+        {
+            startActivity(new Intent(HomeActivity.this,BookingSlotsActivity.class));
+        }
 
     }
 

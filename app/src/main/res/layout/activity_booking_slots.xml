@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bittukumar.treatwell.Activities.BookingSlotsActivity"
+    android:padding="10dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/doc_detail_CV"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:contentPadding="10dp"
+            app:cardBackgroundColor="#c2f3f6f9"
+            >
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:id="@+id/docIV"
+                    android:src="@drawable/ic_doctor"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/doc_nameTV"
+                    app:layout_constraintTop_toTopOf="@id/docIV"
+                    app:layout_constraintBottom_toBottomOf="@id/docIV"
+                    app:layout_constraintLeft_toRightOf="@id/docIV"
+                    android:text="Dr. Bittu Choudhary"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="16dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/doc_spec_contTV"
+                    app:layout_constraintTop_toBottomOf="@id/doc_nameTV"
+                    app:layout_constraintLeft_toLeftOf="@id/doc_nameTV"
+                    android:text="Specialisation: "
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/doc_specTV"
+                    app:layout_constraintLeft_toRightOf="@id/doc_spec_contTV"
+                    app:layout_constraintTop_toTopOf="@id/doc_spec_contTV"
+                    app:layout_constraintBottom_toBottomOf="@id/doc_spec_contTV"
+                    android:text="Nothing!!!"/>
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:id="@+id/hospIV"
+                    app:layout_constraintLeft_toLeftOf="@id/docIV"
+                    app:layout_constraintTop_toBottomOf="@id/doc_specTV"
+                    android:src="@drawable/ic_hosp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/hosp_nameTV"
+                    app:layout_constraintTop_toTopOf="@id/hospIV"
+                    app:layout_constraintLeft_toRightOf="@id/hospIV"
+                    app:layout_constraintBottom_toBottomOf="@id/hospIV"
+                    android:text="IIT Powai Hospital"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@android:color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/hosp_addrTV"
+                    app:layout_constraintLeft_toLeftOf="@id/hosp_nameTV"
+                    app:layout_constraintTop_toBottomOf="@id/hosp_nameTV"
+                    android:text="iit powai mumbai \npin: 400076 \nMaharashtra"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15sp"
+                    android:layout_marginStart="10dp" />
+
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/doc_detail_CV"
+            android:id="@+id/dateCV"
+            app:contentPadding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            >
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/dateTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="15/08/1997"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:gravity="center"
+                    android:background="@drawable/bg_rectangle"
+                    />
+            </android.support.constraint.ConstraintLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/slots_recyclerView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateCV">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
