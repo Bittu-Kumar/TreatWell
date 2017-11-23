@@ -36,15 +36,10 @@
     <string name="empty_name_error">Please enter your name</string>
 
     <string-array name="SortByOptions">
-        <item>Please Select ...</item>
+        <item>Distance</item>
         <item>Hospital_Ranking</item>
         <item>Doctor_Ranking</item>
         <item>Fees</item>
-        <item>Distance</item>
     </string-array>
-    <string-array name="SpecificationOptions">
-        <item>Dermatology</item>
-        <item>Pediatrics</item>
-        <item>ENT</item>
-    </string-array>
+
 </resources>
