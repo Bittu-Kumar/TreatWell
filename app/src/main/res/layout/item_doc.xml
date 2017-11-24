@@ -6,6 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/doc_itemIV"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:src="@drawable/ic_doctor"/>
+
     <TextView
         android:id="@+id/doc_name"
         android:layout_width="0dp"
@@ -17,12 +25,10 @@
         android:text="TextView"
         android:textColor="#00F"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.016" />
+        app:layout_constraintTop_toTopOf="@id/doc_itemIV"
+
+        app:layout_constraintLeft_toRightOf="@id/doc_itemIV"
+         />
 
     <TextView
         android:id="@+id/hos_name"
@@ -34,12 +40,10 @@
         android:text="TextView"
         android:textColor="#808080"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.026"
-        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintLeft_toLeftOf="@id/doc_name"
         app:layout_constraintTop_toBottomOf="@+id/doc_name"
-        app:layout_constraintVertical_bias="0.029" />
+        />
 
     <TextView
         android:id="@+id/fees"
