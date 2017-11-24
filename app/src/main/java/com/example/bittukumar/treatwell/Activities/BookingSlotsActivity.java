@@ -2,6 +2,7 @@ package com.example.bittukumar.treatwell.Activities;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import com.example.bittukumar.treatwell.SlotsRecyclerView.Data;
 import com.example.bittukumar.treatwell.SlotsRecyclerView.RecyclerViewItemClickListener;
 import com.example.bittukumar.treatwell.SlotsRecyclerView.Recycler_View_Adapter;
 import com.example.bittukumar.treatwell.Utils.AppConstants;
+import com.example.bittukumar.treatwell.Utils.Utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,16 +39,35 @@ public class BookingSlotsActivity extends AppCompatActivity implements View.OnCl
     RecyclerView recyclerView;
     private Recycler_View_Adapter adapter;
     List<Data> data;
-    String hospId;
-    String DoctorId;
     private TextView dateTV;
     private Calendar calendar;
     private DatePickerDialog.OnDateSetListener date;
+    private TextView docNameTV,docSpecTV,hospNameTV,hospAddrTV;
+
+    private String docid,docName,docSpec,hospid,hospName,hospAddr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_slots);
+
+        Intent intent = getIntent();
+        docid = intent.getStringExtra("doc_id");
+        docName = intent.getStringExtra("doc_fname")+" "+intent.getStringExtra("doc_mname")+" "+intent.getStringExtra("doc_lname");
+        docSpec = intent.getStringExtra("doctor_spec");
+        hospid = intent.getStringExtra("hosp_id");
+        hospName = intent.getStringExtra("hosp_name");
+        hospAddr = intent.getStringExtra("hosp_address");
+
+        docNameTV = (TextView)findViewById(R.id.doc_nameTV);
+        docSpecTV = (TextView)findViewById(R.id.doc_specTV);
+        hospNameTV = (TextView)findViewById(R.id.hosp_nameTV);
+        hospAddrTV = (TextView)findViewById(R.id.hosp_addrTV);
+        docNameTV.setText(docName);
+        docSpecTV.setText(docSpec);
+        hospNameTV.setText(hospName);
+        hospAddrTV.setText(hospAddr);
+
 
         calendar = Calendar.getInstance();
         recyclerView = (RecyclerView)findViewById(R.id.slots_recyclerView);
@@ -101,8 +122,8 @@ public class BookingSlotsActivity extends AppCompatActivity implements View.OnCl
     private void getData() {
         String date = dateTV.getText().toString();
         HashMap<String,String> params = new HashMap<>();
-        params.put("docid","rossgeller");
-        params.put("hospid","KEM");
+        params.put("docid",docid);
+        params.put("hospid",hospid);
         params.put("date",date);
 
         VolleyStringRequest.request(BookingSlotsActivity.this, AppConstants.slotsUrl,params,slotsResp);
@@ -155,13 +176,31 @@ public class BookingSlotsActivity extends AppCompatActivity implements View.OnCl
         getData();
     }
 
-    private void confirmDialog(int position)
+    private void confirmDialog(final int position)
     {
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(BookingSlotsActivity.this);
         LayoutInflater inflater = BookingSlotsActivity.this.getLayoutInflater();
         final View dialogView = inflater.inflate(R.layout.cofirm_slot_dialog_layout, null);
         dialogBuilder.setView(dialogView);
+        TextView doc_nameTV = (TextView)dialogView.findViewById(R.id.doc_name_confirmTV);
+        TextView doc_specTV = (TextView)dialogView.findViewById(R.id.doc_spec_confirmTV);
+        TextView hosp_nameTV = (TextView)dialogView.findViewById(R.id.hosp_name_confirmTV);
+        TextView hosp_addrTV = (TextView)dialogView.findViewById(R.id.hosp_addr_confirmTV);
+        TextView date_TV = (TextView)dialogView.findViewById(R.id.date_confirmTV);
+        TextView starttimeTV = (TextView)dialogView.findViewById(R.id.startTime_confirmTV);
+        TextView endtimeTV = (TextView)dialogView.findViewById(R.id.endTime_confirmTV);
+        TextView feeTV = (TextView)dialogView.findViewById(R.id.real_fee_confirmTV);
+
+        doc_nameTV.setText(docName);
+        doc_specTV.setText(docSpec);
+        hosp_nameTV.setText(hospName);
+        hosp_addrTV.setText(hospAddr);
+        String cdate = dateTV.getText().toString();
+        date_TV.setText(cdate);
+        starttimeTV.setText(data.get(position).startTime);
+        endtimeTV.setText(data.get(position).endTime);
+        feeTV.setText(data.get(position).fee);
 
         dialogBuilder.setPositiveButton("pay & confirm", null);
 
@@ -182,6 +221,8 @@ public class BookingSlotsActivity extends AppCompatActivity implements View.OnCl
 
                     @Override
                     public void onClick(View view) {
+                        bookAppointment(position);
+                        b.dismiss();
 
                     }
                 });
@@ -190,5 +231,31 @@ public class BookingSlotsActivity extends AppCompatActivity implements View.OnCl
 
         b.show();
     }
+
+    private void bookAppointment(int position) {
+        String cdate = dateTV.getText().toString();
+        HashMap<String,String > params = new HashMap<>();
+        params.put("hospid",hospid);
+        params.put("docid",docid);
+        params.put("date",cdate);
+        params.put("start_time",data.get(position).startTime);
+        params.put("fees",data.get(position).fee);
+
+        VolleyStringRequest.request(BookingSlotsActivity.this,AppConstants.bookAppointmentUrl,params,bookAppointmnetResp);
+    }
+
+    VolleyStringRequest.OnStringResponse bookAppointmnetResp = new VolleyStringRequest.OnStringResponse() {
+        @Override
+        public void responseReceived(String response) {
+            Utils.showSuccessToast(BookingSlotsActivity.this,"Your Appointment has been successfully booked");
+            getData();
+
+        }
+
+        @Override
+        public void errorReceived(int code, String message) {
+
+        }
+    };
 
 }

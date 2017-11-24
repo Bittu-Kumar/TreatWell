@@ -30,9 +30,11 @@ public class DoctorAdapter extends ArrayAdapter<Doctor> {
         // Lookup view for data population
         TextView docName = (TextView) convertView.findViewById(R.id.doc_name);
         TextView hosName = (TextView) convertView.findViewById(R.id.hos_name);
+        TextView fees = (TextView) convertView.findViewById(R.id.fees);
         // Populate the data into the template view using the data object
         docName.setText("Dr "+doctor.doc_fname+" "+doctor.doc_mname+" "+doctor.doc_lname);
         hosName.setText(doctor.hosp_name);
+        fees.setText("Fees : " + doctor.fees + " Rs");
         // Return the completed view to render on screen
         return convertView;
     }

@@ -34,6 +34,10 @@
     <string name="empty_phone_error">Please enter your Phone Number</string>
     <string name="sign_up">SIGN UP</string>
     <string name="empty_name_error">Please enter your name</string>
+    <string name="add_money">Add Money</string>
+    <string name="empty_add_money_error">Please enter the Amount</string>
+    <string name="please_enter_the_amount">Please enter the amount</string>
+    <string name="pending_appointments">Pending Appointments</string>
 
     <string-array name="SortByOptions">
         <item>Distance</item>

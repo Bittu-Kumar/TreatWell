@@ -50,11 +50,29 @@ public class VolleyStringRequest {
                                 }
                                 else
                                 {
-                                    Toast.makeText(context,jsonResponse.getString("message"),Toast.LENGTH_LONG).show();
+
                                     onResponse.errorReceived(0,response);
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
+                                String response1 = response+"}";
+                                try {
+                                    JSONObject jsonObject1 = new JSONObject(response1);
+                                    if(jsonObject1.getBoolean("status"))
+                                    {
+                                        onResponse.responseReceived(response1);
+                                    }
+                                    else
+                                    {
+
+                                        onResponse.errorReceived(0,response1);
+                                    }
+
+                                } catch (JSONException e1) {
+                                    e1.printStackTrace();
+                                }
+
+
                             }
 
                         }

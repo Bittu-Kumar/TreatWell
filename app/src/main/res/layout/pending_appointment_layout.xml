@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:contentPadding="10dp"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rectangle"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/doc_name_pendingTV"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="Dr. Bittu Choudhary"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/doc_spec_pendingTV"
+            app:layout_constraintTop_toBottomOf="@id/doc_name_pendingTV"
+            app:layout_constraintLeft_toLeftOf="@id/doc_name_pendingTV"
+            android:text="Nothing"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hosp_name_pendingTV"
+            app:layout_constraintTop_toBottomOf="@id/doc_spec_pendingTV"
+            app:layout_constraintLeft_toLeftOf="@id/doc_name_pendingTV"
+            android:text="IIT Powai Mumbai"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hosp_addr_pendingTV"
+            app:layout_constraintTop_toBottomOf="@id/hosp_name_pendingTV"
+            app:layout_constraintLeft_toLeftOf="@id/doc_name_pendingTV"
+            android:text="IIT powai \nPin: 400076"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/date_pendingTV"
+            app:layout_constraintTop_toBottomOf="@id/hosp_addr_pendingTV"
+            app:layout_constraintLeft_toLeftOf="@id/doc_name_pendingTV"
+            android:text="11 Nov 2017"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/startTime_pendingTV"
+            app:layout_constraintTop_toTopOf="@id/date_pendingTV"
+            app:layout_constraintBottom_toBottomOf="@id/date_pendingTV"
+            app:layout_constraintLeft_toRightOf="@id/date_pendingTV"
+            android:text="12:30"
+            android:layout_marginLeft="16dp"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timeseparator_pendingTV"
+            android:text=" - "
+            app:layout_constraintTop_toTopOf="@id/date_pendingTV"
+            app:layout_constraintBottom_toBottomOf="@id/date_pendingTV"
+            app:layout_constraintLeft_toRightOf="@id/startTime_pendingTV"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/endTime_pendingTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="13:00"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/date_pendingTV"
+            app:layout_constraintLeft_toRightOf="@id/timeseparator_pendingTV"
+            app:layout_constraintTop_toTopOf="@id/date_pendingTV" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fee_pendingTV"
+            app:layout_constraintTop_toBottomOf="@id/date_pendingTV"
+            app:layout_constraintLeft_toLeftOf="@id/doc_name_pendingTV"
+            android:text="Fee: "
+            android:textSize="20sp"
+            android:textColor="@android:color/black"/>
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/rupee_pendingIV"
+            android:src="@drawable/ic_rupee"
+            app:layout_constraintLeft_toRightOf="@id/fee_pendingTV"
+            app:layout_constraintTop_toTopOf="@id/fee_pendingTV"
+            app:layout_constraintBottom_toBottomOf="@id/fee_pendingTV"
+            android:padding="5dp"
+            />
+
+        <TextView
+            android:id="@+id/real_fee_pendingTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10.00"
+            android:textColor="#4ce242"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/fee_pendingTV"
+            app:layout_constraintLeft_toRightOf="@id/rupee_pendingIV"
+            app:layout_constraintTop_toTopOf="@id/fee_pendingTV" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

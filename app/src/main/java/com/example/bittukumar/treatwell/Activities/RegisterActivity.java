@@ -4,7 +4,9 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -38,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private DatePickerDialog.OnDateSetListener date;
     private RadioGroup sexRadioGroup;
     private RadioButton selectedRadioButton;
+    private Boolean userValid;
 
     // TODO: 06-11-2017 gender 
     @Override
@@ -63,6 +66,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void init() {
+        userValid = false;
         date = new DatePickerDialog.OnDateSetListener() {
 
             @Override
@@ -76,7 +80,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             }
 
         };
+
     }
+
+
 
     @Override
     public void onClick(View v) {
@@ -92,6 +99,34 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
 
     }
+
+    private void checkUser() {
+        String username = usernameET.getText().toString();
+        if (TextUtils.isEmpty(username))
+        {
+            return;
+        }
+        HashMap<String ,String > params = new HashMap<>();
+        params.put("username",username);
+        VolleyStringRequest.request(RegisterActivity.this,AppConstants.checkUserUrl,params,checkUserResp);
+    }
+
+    VolleyStringRequest.OnStringResponse checkUserResp = new VolleyStringRequest.OnStringResponse() {
+        @Override
+        public void responseReceived(String response) {
+            userValid = true;
+
+
+        }
+
+        @Override
+        public void errorReceived(int code, String message) {
+            userValid = false;
+            usernameET.requestFocus();
+            usernameET.setError("This username already exists!");
+
+        }
+    };
 
     private void register() {
         String username,password,firstname,middlename,lastname,email,dob,bloodgroup,phone;
@@ -189,6 +224,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         }
         if (sexRadioGroup.getCheckedRadioButtonId()==-1)
+        {
+            isvalid = false;
+        }
+        checkUser();
+        if (!userValid)
         {
             isvalid = false;
         }

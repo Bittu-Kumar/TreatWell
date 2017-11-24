@@ -14,4 +14,9 @@ public class AppConstants {
     public static final String logoutURL = host + "logout.php";
     public static final String slotsUrl = host + "slots.php";
     public static final String specUrl = host +"spec_list.php";
+    public static final String bookAppointmentUrl = host + "book_slot.php";
+    public static final String finishedAppUrl = host +"my_fin_appt.php";
+    public static final String pendingAppUrl = host +"my_appt.php";
+    public static final String addMoneyUrl = host +"add_balance.php";
+    public static final String checkUserUrl = host +"user_check.php";
 }

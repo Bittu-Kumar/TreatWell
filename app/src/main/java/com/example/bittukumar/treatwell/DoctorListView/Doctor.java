@@ -23,8 +23,9 @@ public class Doctor {
     public String hosp_rating;
     public String doc_rating;
     public String fees;
+    public String hosp_address;
 
-    public Doctor(String doc_id, String doc_fname, String doc_mname, String doc_lname, String doc_ranking,  String hosp_id, String hosp_name, String hosp_rating, String fees) {
+    public Doctor(String doc_id, String doc_fname, String doc_mname, String doc_lname, String doc_ranking,  String hosp_id, String hosp_name, String hosp_rating, String fees, String hosp_address) {
         this.doc_fname = doc_fname;
         this.doc_mname = doc_mname;
         this.doc_lname = doc_lname;
@@ -34,5 +35,6 @@ public class Doctor {
         this.hosp_rating = hosp_rating;
         this.doc_rating = doc_rating;
         this.fees = fees;
+        this.hosp_address=hosp_address;
     }
 }
