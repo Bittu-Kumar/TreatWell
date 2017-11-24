@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -41,6 +42,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private RadioGroup sexRadioGroup;
     private RadioButton selectedRadioButton;
     private Boolean userValid;
+    private ImageView datepickerIV;
 
     // TODO: 06-11-2017 gender 
     @Override
@@ -62,6 +64,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         registerBTN = (Button)findViewById(R.id.register_button);
         registerBTN.setOnClickListener(this);
         sexRadioGroup = (RadioGroup)findViewById(R.id.register_genderRG);
+        datepickerIV = (ImageView)findViewById(R.id.datepickerIV);
+        datepickerIV.setOnClickListener(this);
         init();
     }
 
@@ -91,11 +95,18 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         {
             register();
         }
-        if(v == dateofbirthET)
+//        if(v == dateofbirthET)
+//        {
+//            new DatePickerDialog(RegisterActivity.this, date, calendar
+//                    .get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+//                    calendar.get(Calendar.DAY_OF_MONTH)).show();
+//        }
+        if (v == datepickerIV)
         {
             new DatePickerDialog(RegisterActivity.this, date, calendar
                     .get(Calendar.YEAR), calendar.get(Calendar.MONTH),
                     calendar.get(Calendar.DAY_OF_MONTH)).show();
+
         }
 
     }
@@ -129,6 +140,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     };
 
     private void register() {
+
         String username,password,firstname,middlename,lastname,email,dob,bloodgroup,phone;
         username = usernameET.getText().toString();
         password = passwordET.getText().toString();
@@ -238,7 +250,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private void updateLabel() {
         String myFormat = "yyyy-MM-dd"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
         dateofbirthET.setText(sdf.format(calendar.getTime()));
     }
+
+
 }

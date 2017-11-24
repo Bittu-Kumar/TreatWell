@@ -115,22 +115,31 @@
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/register_dobTIL"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             app:layout_constraintLeft_toLeftOf="@id/register_usernameTIL"
             app:layout_constraintRight_toRightOf="@id/register_usernameTIL"
-            app:layout_constraintTop_toBottomOf="@id/register_emailTIL">
+            app:layout_constraintTop_toBottomOf="@id/register_emailTIL"
+            app:layout_constraintRight_toLeftOf="@id/datepickerIV">
 
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/register_dobET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/date_of_birth"
-                android:focusable="false"
+
                 android:clickable="true" />
 
         </android.support.design.widget.TextInputLayout>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/datepickerIV"
+            app:layout_constraintTop_toTopOf="@id/register_dobTIL"
+            app:layout_constraintBottom_toBottomOf="@id/register_dobTIL"
+            app:layout_constraintRight_toRightOf="parent"
+            android:src="@drawable/ic_calendar"/>
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/register_bloodgroupTIL"
